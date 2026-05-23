@@ -1,0 +1,11 @@
+# 自己署名証明書 (秘密鍵を含むため絶対に push しない)
+cert/
+*.pem
+*.key
+
+# Node
+node_modules/
+npm-debug.log*
+
+# macOS
+.DS_Store
