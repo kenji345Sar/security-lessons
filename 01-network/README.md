@@ -18,6 +18,10 @@ TLS は 2 つを同時にやる。
 
 ---
 
+> **本サンプルの実行環境**: `node weak-server.js` は Mac 上の Node プロセス、`weak-client.js` も Mac 上の別 Node プロセス。tcpdump は **`-i lo0`（ループバック）** を覗いている。**「サーバ」「クライアント」は同じ Mac の中のプロセス2つ** であり、別マシン同士の通信ではない。本物の別マシン間の TLS 構築は [`infra-lessons/01-package-delivery`](../../infra-lessons/01-package-delivery/) を参照。
+
+---
+
 ## 手順
 
 ### 1. 弱いコード (HTTP) を動かす
